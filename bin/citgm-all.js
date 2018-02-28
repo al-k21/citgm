@@ -38,6 +38,10 @@ const yargs = commonArgs(require('yargs'))
   .option('excludeTags', {
     type: 'array',
     description: 'Define which tags from the lookup to skip'
+  })
+  .option('lkgr', {
+    type: 'boolean',
+    description: 'Latest know good release'
   });
 
 const app = yargs.argv;
@@ -65,6 +69,7 @@ const options = {
   npmLevel: app.npmLoglevel,
   timeoutLength: app.timeout,
   tmpDir: app.tmpDir,
+  lkgr: app.lkgr,
   includeTags: app.includeTags || [],
   excludeTags: app.excludeTags || []
 };

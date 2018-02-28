@@ -1,7 +1,9 @@
 {
   "lodash": {
     "expectFail": "fips",
-    "maintainers": "jdalton"
+    "maintainers": "jdalton",
+    "lkgr": "4.17.3",
+    "master": true
   },
   "underscore": {
     "flaky": ["aix", "s390"],
