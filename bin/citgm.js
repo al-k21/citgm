@@ -14,6 +14,11 @@ const yargs = commonArgs(require('yargs'))
     alias: 'c',
     type: 'string',
     description: 'Install module from commit-sha'
+  })
+  .option('last-known-good-release', {
+    alias: 'lkgr',
+    type: 'boolean',
+    description: 'Install last known good release'
   });
 
 const app = yargs.argv;
@@ -47,7 +52,8 @@ const options = {
   npmLevel: app.npmLoglevel,
   timeoutLength: app.timeout,
   sha: app.sha,
-  tmpDir: app.tmpDir
+  tmpDir: app.tmpDir,
+  lkgr: app.lkgr
 };
 
 if (!citgm.windows) {
